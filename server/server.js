@@ -21,7 +21,13 @@ app.post('/todos', (req, res) => {
     })
 })
 
-
+app.get('/todos', (req, res) => {
+    Todo.find().then((todos) => {
+        res.send({todos})
+    }, (err) => {
+        res.status(404).send(err.errors.text.message)
+    })
+});
 
 app.listen(3000, () => {
     console.log('Listen on port 3000');
