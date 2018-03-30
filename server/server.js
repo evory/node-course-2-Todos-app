@@ -1,6 +1,9 @@
+require('./config/config.js');
+
 const express = require('express');
 const bodyParser = require('body-parser')
 const _ = require('lodash');
+
 
 var {mongoose} = require('./db/mongoose');
 var {Todo} = require('./models/todo');
